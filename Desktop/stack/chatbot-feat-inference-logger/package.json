@@ -1,0 +1,26 @@
+{
+  "name": "llm-inference-logger",
+  "version": "1.0.0",
+  "description": "Lightweight inference logging and ingestion system for LLM applications",
+  "private": true,
+  "scripts": {
+    "install:all": "npm install && cd frontend && npm install",
+    "dev:backend": "node server/index.js",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\"",
+    "db:init": "node server/database/init.js",
+    "start": "NODE_ENV=production node server/index.js"
+  },
+  "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "sql.js": "^1.11.0",
+    "concurrently": "^9.1.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.0",
+    "uuid": "^11.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
+}
